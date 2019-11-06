@@ -1,21 +1,20 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class KauppaImpl implements Kauppa {
 
+    @Autowired
     private Varasto varasto;
+    @Autowired
     private Pankki pankki;
+    
     private Ostoskori ostoskori;
+    @Autowired
     private Viitegeneraattori viitegeneraattori;
     private String kaupanTili = "3333-44455";
-
-    public KauppaImpl(Viitegeneraattori viitegeneraattori, Pankki pankki, Varasto varasto) {
-        this.varasto = varasto;
-        this.pankki = pankki;
-        this.viitegeneraattori = viitegeneraattori;
-    }
 
     @Override
     public void aloitaAsiointi() {
@@ -44,5 +43,4 @@ public class KauppaImpl implements Kauppa {
 
         return pankki.tilisiirto(nimi, viite, tiliNumero, kaupanTili, summa);
     }
-
 }
