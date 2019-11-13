@@ -29,6 +29,17 @@ public class Stepdefs {
         element.click();
     }
 
+    @Given("user with username {string} with password {string} is successfully created")
+    public void userWithUsernameWithPasswordIsSuccessfullyCreated(String username, String password) {
+        commandNewUserIsSelected();
+        signUpWith(username, password);
+    }
+
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userWithUsernameAndPasswordIsTriedToBeCreated(String username, String password) {
+        commandNewUserIsSelected();
+        signUpWith(username, password);
+    }
     @Then("a new user is created")
     public void aNewUserIsCreated() {
         pageHasContent("Welcome to Ohtu Application!");
