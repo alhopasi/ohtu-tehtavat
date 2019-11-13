@@ -2,5 +2,6 @@
 */build/
 */.gradle/
 */.idea/
+*/salasanat.txt
 /Verkkokauppa1/.nb-gradle/
 /nhlreader/.nb-gradle/
