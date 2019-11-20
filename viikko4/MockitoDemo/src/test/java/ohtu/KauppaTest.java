@@ -40,7 +40,7 @@ public class KauppaTest {
         kauppa.maksa("1111");
 
         // tällä kertaa vaaditaan että ensimmäisen parametrin arvo on oikea
-        verify(mockPankki).maksa(eq("1111"), anyInt(), anyInt());
+        verify(mockPankki).maksa(eq("1112"), anyInt(), anyInt());
         // kokeile muuttaa koodia siten että testi menee rikki!    
     }
 
@@ -57,7 +57,7 @@ public class KauppaTest {
         kauppa.maksa("1111");
 
         // nyt vaadimme myös toisen parametrin arvon olevan oikea
-        verify(mockPankki).maksa(eq("1111"), eq(10), anyInt());
+        verify(mockPankki).maksa(eq("1111"), eq(11), anyInt());
     }
 
     @Test
@@ -78,7 +78,7 @@ public class KauppaTest {
 
         // nyt kaksi ensimmäistä parametria saa olla arvoiltaan mitä sattuu
         // kolmannen on oltava sama mikä mock-olion määriteltiin palauttavan
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(55));
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(54));
     }
 
     @Test
@@ -110,7 +110,7 @@ public class KauppaTest {
 
         // tarkistetaan että tässä vaiheessa viitegeneraattorin metodia seuraava()
         // on kutsuttu kolme kertaa        
-        verify(mockViite, times(3)).seruaava();
+        verify(mockViite, times(4)).seruaava();
     }
 
     @Test
@@ -145,7 +145,7 @@ public class KauppaTest {
         kauppa.maksa("4321");
 
         // ... ja kolmantena pyydetty viite        
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(3));           
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(4));
 
     }
 }
