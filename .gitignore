@@ -1,7 +1,6 @@
 *.tmp
-*/build/
-*/.gradle/
-*/.idea/
-*/salasanat.txt
-/Verkkokauppa1/.nb-gradle/
-/nhlreader/.nb-gradle/
+**/build/
+**/.gradle/
+**/.idea/
+**/salasanat.txt
+**/.nb-gradle/
