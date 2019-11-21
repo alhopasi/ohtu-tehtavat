@@ -19,14 +19,14 @@ public class IntJoukkoTest {
     @Test
     public void lukujaLisattyMaara() {
         joukko.lisaa(4);
-        assertEquals(3, joukko.mahtavuus());
+        assertEquals(3, joukko.joukonKoko());
     }
 
     @Test
     public void samaLukuMeneeJoukkoonVaanKerran() {
         joukko.lisaa(10);
         joukko.lisaa(3);
-        assertEquals(2, joukko.mahtavuus());
+        assertEquals(2, joukko.joukonKoko());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class IntJoukkoTest {
     public void poistettuEiOleEnaaJoukossa() {
         joukko.poista(3);
         assertFalse(joukko.onkoLukua(3));
-        assertEquals(1, joukko.mahtavuus());
+        assertEquals(1, joukko.joukonKoko());
     }
     
     @Test
@@ -63,11 +63,11 @@ public class IntJoukkoTest {
         for (int luku : lisattavat) {
             joukko.lisaa(luku);
         }
-        assertEquals(14, joukko.mahtavuus());
+        assertEquals(14, joukko.joukonKoko());
         assertTrue(joukko.onkoLukua(11));
         joukko.poista(11);
         assertFalse(joukko.onkoLukua(11));
-        assertEquals(13, joukko.mahtavuus());
+        assertEquals(13, joukko.joukonKoko());
     }
     
     @Test

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class IntJoukko {
 
-    List<Integer> joukko;
+    private List<Integer> joukko;
 
     public IntJoukko() {
         joukko = new ArrayList<>();
@@ -37,21 +37,21 @@ public class IntJoukko {
         return false;
     }
 
-    public int mahtavuus() {
+    public int joukonKoko() {
         return joukko.size();
     }
 
     @Override
     public String toString() {
-        String tuotos = "{";
+        String merkkijono = "{";
         for (int luku : joukko) {
-            tuotos += (luku + ", ");
+            merkkijono += (luku + ", ");
         }
         if (joukko.size() > 0) {
-            tuotos = tuotos.substring(0,tuotos.length() - 2);
+            merkkijono = merkkijono.substring(0,merkkijono.length() - 2);
         }
-        tuotos += "}";
-        return tuotos;
+        merkkijono += "}";
+        return merkkijono;
     }
 
     public int[] toIntArray() {
@@ -64,40 +64,40 @@ public class IntJoukko {
         return taulu;
     }
 
-    public List<Integer> getList() {
+    private List<Integer> getList() {
         return joukko;
     }
 
-    public static IntJoukko yhdiste(IntJoukko a, IntJoukko b) {
-        IntJoukko x = new IntJoukko();
-        for (int luku : a.getList()) {
-            x.lisaa(luku);
+    public static IntJoukko yhdiste(IntJoukko eka, IntJoukko toka) {
+        IntJoukko uusi = new IntJoukko();
+        for (int luku : eka.getList()) {
+            uusi.lisaa(luku);
         }
-        for (int luku : b.getList()) {
-            x.lisaa(luku);
+        for (int luku : toka.getList()) {
+            uusi.lisaa(luku);
         }
-        return x;
+        return uusi;
     }
 
-    public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
-        IntJoukko x = new IntJoukko();
-        for (int luku : a.getList()) {
-            if (b.onkoLukua(luku)) {
-                x.lisaa(luku);
+    public static IntJoukko leikkaus(IntJoukko eka, IntJoukko toka) {
+        IntJoukko uusi = new IntJoukko();
+        for (int luku : eka.getList()) {
+            if (toka.onkoLukua(luku)) {
+                uusi.lisaa(luku);
             }
         }
-        return x;
+        return uusi;
     }
 
-    public static IntJoukko erotus(IntJoukko a, IntJoukko b) {
-        IntJoukko x = new IntJoukko();
-        for (int luku : a.getList()) {
-            x.lisaa(luku);
+    public static IntJoukko erotus(IntJoukko eka, IntJoukko toka) {
+        IntJoukko uusi = new IntJoukko();
+        for (int luku : eka.getList()) {
+            uusi.lisaa(luku);
         }
-        for (int luku : b.getList()) {
-            x.poista(luku);
+        for (int luku : toka.getList()) {
+            uusi.poista(luku);
         }
-        return x;
+        return uusi;
     }
 
     public boolean onkoLukua(int luku) {
