@@ -13,3 +13,5 @@
 [retro.md](/viikko5/retro.md)
 
 [viikko6](/viikko6)
+
+[PULL.md](/viikko6/PULL.md)
