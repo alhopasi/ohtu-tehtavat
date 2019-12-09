@@ -15,3 +15,8 @@
 [viikko6](/viikko6)
 
 [PULL.md](/viikko6/PULL.md)
+
+[viikko7](/viikko7)
+
+[MERGE.md](/viikko6/MERGE.md)
+
